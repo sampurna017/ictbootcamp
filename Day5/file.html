@@ -6,8 +6,8 @@
     <title>File</title>
 </head>
 <body>
- <h1>Welcome To My Website</h1>   
- <p>This is a sample HTML project demonstrating basic concepts.</p>
+ <h1 style="text-align: center;">Welcome To My Website</h1>   
+ <p style="text-align: center;">This is a sample HTML project demonstrating basic concepts.</p>
  <h2>Usefull Links</h2>
  <ul>
     <li><a href="https://www.google.com">Go to google</a></li>
@@ -28,7 +28,7 @@
     <li>Java script</li>
     </ol>
     <h2>Students Table</h2>
-    <table border="1">
+    <table border="1" ">
         <tr>
             <td>Name</td>
             <th>Age</th>
@@ -47,10 +47,12 @@
     </table>
     <h2>Content form</h2>
     <form action="/Submit" method="post" >
-        <label for="Name">Name:</label><br> <input type="text" id="Name" name="Name"><br><br>
+        <label for="Name">Name:</label><br> 
+        <input type="text" id="Name" name="Name"><br><br>
 
-        <label for="Email">Email:</label><br><input type="email" id="email" name="email"><br><br>
-        <label for="Gender">Gender</label><br>
+        <label for="Email">Email:</label><br>
+        <input type="email" id="email" name="email"><br><br>
+        <label for="Gender">Gender:</label><br>
         <input type="radio" name="Gender" > Male
         <input type="radio" name="Gender"> Female<br>
         <label for="course">Course:</label><br>
@@ -58,7 +60,6 @@
         <select id="course" name="Course">
             <option value="CSIT">CSIT</option>
             <option value="ICT">ICT</option>
-            <option value="csit">csit</option>
             <option value="bca">bca</option>
             <option value="bsc">bsc</option>
             <option value="ba">ba</option>
