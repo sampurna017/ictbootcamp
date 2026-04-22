@@ -4,17 +4,22 @@ body {
     line height: 1.7;
 }
 h1{
-letter-spacing: -1px;
-font-size:xx-large ;
+letter-spacing: -0.5px;
+font-size: 1.7rem; font-family: GEORGIA;
 }
 p{
     margin-bottom: 14px;
     font-size: medium;
 }
 .a{
-    max-width: 1160px;
-    margin:40px;
-    padding: 40px 24px 30px;
+    max-width:860px;
+    margin:0 auto;
+    padding: 40px 24px 30px;}
+    #b{
     background-color: rgb(0, 0, 36);
+    color: whitesmoke;
+    padding: 48px 20px 36px;
     border-radius:10px ;
+    position: relative;
+    overflow: hidden;
 }
