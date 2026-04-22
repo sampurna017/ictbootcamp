@@ -1,0 +1,25 @@
+/* external css */
+body {
+    background-color: rgba(0, 0, 0, 0.863);
+}
+p {
+    color: snow;
+}
+ul {
+    color: rgb(11, 182, 182);
+}
+h1 {
+    color: white; text-align: center;
+}
+/* class selector */
+.nav {
+    background-color: darkgray;
+}
+.foot {
+    background-color: rgba(83, 82, 82, 0.911);
+}
+/* id selectors */
+#title1 {
+    color: white; text-align: center;
+
+}

@@ -1,0 +1,20 @@
+body {
+    background-color: antiquewhite;
+    color: whitesmoke;
+    line height: 1.7;
+}
+h1{
+letter-spacing: -1px;
+font-size:xx-large ;
+}
+p{
+    margin-bottom: 14px;
+    font-size: medium;
+}
+.a{
+    max-width: 1160px;
+    margin:40px;
+    padding: 40px 24px 30px;
+    background-color: rgb(0, 0, 36);
+    border-radius:10px ;
+}
