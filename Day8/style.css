@@ -1,0 +1,94 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e6e0d8;
+    margin: 0;
+    padding: 40px;
+  }
+  
+  /* Shared container style */
+  .container {
+    background: #f8f6f2;
+    padding: 25px;
+    border-radius: 10px;
+    max-width: 950px;
+    margin: 0 auto 30px auto;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  }
+  
+  h2 {
+    border-bottom: 3px solid #a94442;
+    padding-bottom: 8px;
+    margin-bottom: 10px;
+  }
+  
+  p {
+    color: #333;
+  }
+  
+  /* Image grid */
+  .image-grid {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+  }
+  
+  .card {
+    flex: 1;
+    min-width: 250px;
+    text-align: center;
+  }
+  
+  .card img {
+    width: 100%;
+    border-radius: 8px;
+  }
+  
+  .card p {
+    margin-top: 8px;
+    color: #666;
+    font-size: 14px;
+  }
+  
+  /* Table styling */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    overflow: hidden;
+    border-radius: 8px;
+  }
+  
+  /* Header */
+  thead {
+    background-color: #1f2438;
+    color: white;
+  }
+  
+  th {
+    text-align: left;
+    padding: 12px;
+  }
+  
+  /* Body */
+  td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  /* Zebra striping */
+  tbody tr:nth-child(odd) {
+    background-color: #f0ead6;
+  }
+  
+  tbody tr:nth-child(even) {
+    background-color: #ffffff;
+  }
+  
+  /* Rounded corners fix */
+  table thead tr:first-child th:first-child {
+    border-top-left-radius: 8px;
+  }
+  table thead tr:first-child th:last-child {
+    border-top-right-radius: 8px;
+  }

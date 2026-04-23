@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HTML & CSS Fundamentals</title>
+  <link rel="stylesheet" href="1.css">
+</head>
+<body>
+
+<!-- Header -->
+<header class="hero">
+  <h1>HTML & CSS Fundamentals</h1>
+  <p>Text · Links · Images · Tables · Forms · Selectors · Box Model</p>
+</header>
+
+<!-- 1. Text -->
+<section class="container">
+  <h2>1. Text</h2>
+
+  <h3 class="subheading">Headings & Paragraphs</h3>
+
+  <p>
+    HTML provides <strong>six heading levels</strong> (h1–h6) and the humble 
+    <code>&lt;p&gt;</code> tag for paragraphs. Good typography starts with semantic structure.
+  </p>
+
+  <p>
+    You can mark text as <b>bold</b>, <i>italic</i>, <u>underlined</u>, or even 
+    <del>struck through</del>. For inline code: <code>color: red;</code>
+  </p>
+
+  <blockquote>
+    "First, solve the problem. Then, write the code." — John Johnson
+  </blockquote>
+
+  <div class="tags">
+    <span class="tag red">HTML</span>
+    <span class="tag blue">CSS</span>
+    <span class="tag green">BASIC</span>
+  </div>
+</section>
+
+<!-- 2. Links -->
+<section class="container">
+  <h2>2. Links</h2>
+
+  <p>
+    Links use the <code>&lt;a href=""&gt;</code> tag. They can point to external pages,
+    internal anchors, emails, or files.
+  </p>
+
+  <div class="links">
+    <a href="#">→ MDN Web Docs</a>
+    <a href="#">→ W3Schools</a>
+    <a href="#">→ Send an Email</a>
+    <a href="#">→ Back to Top (anchor)</a>
+  </div>
+</section>
+
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Images & Tables</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Images Section -->
+  <section class="container">
+    <h2>3. Images</h2>
+    <p>
+      Images use <code>&lt;img src="" alt=""&gt;</code>. Always include alt text for accessibility.
+    </p>
+
+    <div class="image-grid">
+      
+      <div class="card">
+        <img src="https://picsum.photos/id/1018/400/250" alt="Mountain view">
+        <p>Mountain — via Lorem Picsum</p>
+      </div>
+
+      <div class="card">
+        <img src="https://picsum.photos/id/1011/400/250" alt="Forest scene">
+        <p>Forest — via Lorem Picsum</p>
+      </div>
+
+      <div class="card">
+        <img src="https://picsum.photos/id/1015/400/250" alt="Ocean view">
+        <p>Ocean — via Lorem Picsum</p>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- Tables Section -->
+  <section class="container">
+    <h2>4. Tables</h2>
+    <p>
+      Tables organise data into rows (&lt;tr&gt;), header cells (&lt;th&gt;), and data cells (&lt;td&gt;).
+    </p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Tag</th>
+          <th>Full Name</th>
+          <th>Purpose</th>
+          <th>Type</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>&lt;p&gt;</td>
+          <td>Paragraph</td>
+          <td>Block of text content</td>
+          <td>Block</td>
+        </tr>
+        <tr>
+          <td>&lt;a&gt;</td>
+          <td>Anchor</td>
+          <td>Hyperlink to another resource</td>
+          <td>Inline</td>
+        </tr>
+        <tr>
+          <td>&lt;img&gt;</td>
+          <td>Image</td>
+          <td>Embeds an image</td>
+          <td>Inline</td>
+        </tr>
+        <tr>
+          <td>&lt;table&gt;</td>
+          <td>Table</td>
+          <td>Tabular data layout</td>
+          <td>Block</td>
+        </tr>
+        <tr>
+          <td>&lt;form&gt;</td>
+          <td>Form</td>
+          <td>User input container</td>
+          <td>Block</td>
+        </tr>
+        <tr>
+          <td>&lt;div&gt;</td>
+          <td>Division</td>
+          <td>Generic container / layout</td>
+          <td>Block</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Form Example</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<section class="container">
+  <h2>5. Forms</h2>
+  <p>
+    Forms collect user data with various input types: text, email, password, number, select, textarea, checkbox, radio, and more.
+  </p>
+
+  <form>
+    <div class="grid">
+
+      <div>
+        <label>First Name</label>
+        <input type="text" placeholder="e.g. Aarav">
+      </div>
+
+      <div>
+        <label>Last Name</label>
+        <input type="text" placeholder="e.g. Sharma">
+      </div>
+
+      <div>
+        <label>Email Address</label>
+        <input type="email" placeholder="you@example.com">
+      </div>
+
+      <div>
+        <label>Age</label>
+        <input type="number" placeholder="25">
+      </div>
+
+      <div>
+        <label>Country</label>
+        <select>
+          <option>-- Select --</option>
+          <option>India</option>
+          <option>USA</option>
+          <option>UK</option>
+        </select>
+      </div>
+
+      <div>
+        <label>Password</label>
+        <input type="password" placeholder="Min 8 characters">
+      </div>
+
+    </div>
+
+    <div class="full">
+      <label>Short Bio</label>
+      <textarea placeholder="Tell us about yourself..."></textarea>
+    </div>
+
+    <div class="full">
+      <label>Interests</label>
+      <div class="inline">
+        <label><input type="checkbox"> HTML</label>
+        <label><input type="checkbox"> CSS</label>
+        <label><input type="checkbox"> JavaScript</label>
+      </div>
+    </div>
+
+    <div class="full">
+      <label>Experience Level</label>
+      <div class="inline">
+        <label><input type="radio" name="exp" checked> Beginner</label>
+        <label><input type="radio" name="exp"> Intermediate</label>
+        <label><input type="radio" name="exp"> Advanced</label>
+      </div>
+    </div>
+
+    <div class="buttons">
+      <button type="submit" class="submit">Submit Form</button>
+      <button type="reset" class="reset">Reset</button>
+    </div>
+
+    <p class="note">* All fields marked required must be filled before submitting.</p>
+
+  </form>
+</section>
+
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CSS Concepts</title>
+  <link rel="stylesheet" href="styles1.css">
+</head>
+<body>
+
+<!-- 6. CSS Selectors -->
+<section class="container">
+  <h2>6. CSS Selectors</h2>
+  <p>
+    CSS selectors target elements by <strong>element type</strong>, <strong>.class</strong>, or <strong>#id</strong>.
+  </p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Selector</th>
+        <th>Syntax</th>
+        <th>Targets</th>
+        <th>Example</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Element</td>
+        <td><code>p { }</code></td>
+        <td>All &lt;p&gt; tags</td>
+        <td class="red">Every paragraph</td>
+      </tr>
+      <tr>
+        <td>Class</td>
+        <td><code>.section { }</code></td>
+        <td>All elements with class="section"</td>
+        <td class="blue">These white cards</td>
+      </tr>
+      <tr>
+        <td>ID</td>
+        <td><code>#site-header { }</code></td>
+        <td>One element with id="site-header"</td>
+        <td class="green">The dark header above</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- 7. CSS Box Model -->
+<section class="container">
+  <h2>7. CSS Box Model</h2>
+  <p>
+    Every HTML element is a rectangular box made of four layers:
+    <strong>content → padding → border → margin</strong>.
+  </p>
+
+  <div class="box-row">
+
+    <div class="box margin-box">
+      <h4>Margin</h4>
+      <p>Space outside the border</p>
+      <code>margin: 20px</code>
+    </div>
+
+    <div class="box border-box">
+      <h4>Border</h4>
+      <p>Visible edge around padding</p>
+      <code>border: 6px solid red</code>
+    </div>
+
+    <div class="box padding-box">
+      <h4>Padding</h4>
+      <p>Space inside the border</p>
+      <code>padding: 32px 12px</code>
+    </div>
+
+  </div>
+
+  <div class="box content-box">
+    <h4>Content</h4>
+    <p>The actual text or media</p>
+    <code>width: 100%</code>
+  </div>
+
+  <p class="note">
+    Using <code>box-sizing: border-box</code> makes layout easier by including padding and border in width.
+  </p>
+
+</section>
+
+</body>
+</html>

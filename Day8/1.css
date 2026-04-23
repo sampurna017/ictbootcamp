@@ -1,0 +1,98 @@
+body {
+    font-family: Georgia, serif;
+    background: #e6e0d8;
+    margin: 0;
+    padding: 30px;
+  }
+  
+  /* Hero Header */
+  .hero {
+    background: #1c1f3a;
+    color: white;
+    padding: 40px;
+    border-radius: 12px;
+    margin-bottom: 30px;
+  }
+  
+  .hero h1 {
+    margin: 0;
+    font-size: 40px;
+  }
+  
+  .hero p {
+    margin-top: 10px;
+    color: #ddd;
+  }
+  
+  /* Container Cards */
+  .container {
+    background: #f8f6f2;
+    padding: 25px;
+    border-radius: 10px;
+    margin-bottom: 25px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  }
+  
+  h2 {
+    border-bottom: 2px solid #a94442;
+    padding-bottom: 8px;
+  }
+  
+  /* Subheading */
+  .subheading {
+    color: #a94442;
+  }
+  
+  /* Paragraph */
+  p {
+    color: #333;
+    line-height: 1.6;
+  }
+  
+  /* Code */
+  code {
+    background: #eee;
+    padding: 2px 6px;
+    border-radius: 4px;
+  }
+  
+  /* Blockquote */
+  blockquote {
+    border-left: 4px solid #c0392b;
+    padding-left: 15px;
+    margin: 20px 0;
+    color: #666;
+    font-style: italic;
+  }
+  
+  /* Tags */
+  .tags {
+    margin-top: 15px;
+  }
+  
+  .tag {
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    margin-right: 8px;
+  }
+  
+  .red { background: #f8d7da; color: #a94442; }
+  .blue { background: #d6e9f9; color: #31708f; }
+  .green { background: #d4edda; color: #3c763d; }
+  
+  /* Links */
+  .links {
+    margin-top: 10px;
+  }
+  
+  .links a {
+    display: inline-block;
+    margin-right: 15px;
+    color: #a94442;
+    text-decoration: none;
+  }
+  
+  .links a:hover {
+    text-decoration: underline;
+  }
