@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CSS Concepts</title>
+  <link rel="stylesheet" href="2.css">
+</head>
+<body>
+
+<!-- 6. CSS Selectors -->
+<section class="container">
+  <h2>6. CSS Selectors</h2>
+  <p>
+    CSS selectors target elements by <strong>element type</strong>, <strong>.class</strong>, or <strong>#id</strong>.
+  </p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Selector</th>
+        <th>Syntax</th>
+        <th>Targets</th>
+        <th>Example</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Element</td>
+        <td><code>p { }</code></td>
+        <td>All &lt;p&gt; tags</td>
+        <td class="red">Every paragraph</td>
+      </tr>
+      <tr>
+        <td>Class</td>
+        <td><code>.section { }</code></td>
+        <td>All elements with class="section"</td>
+        <td class="blue">These white cards</td>
+      </tr>
+      <tr>
+        <td>ID</td>
+        <td><code>#site-header { }</code></td>
+        <td>One element with id="site-header"</td>
+        <td class="green">The dark header above</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- 7. CSS Box Model -->
+<section class="container">
+  <h2>7. CSS Box Model</h2>
+  <p>
+    Every HTML element is a rectangular box made of four layers:
+    <strong>content → padding → border → margin</strong>.
+  </p>
+
+  <div class="box-row">
+
+    <div class="box margin-box">
+      <h4>Margin</h4>
+      <p>Space outside the border</p>
+      <code>margin: 20px</code>
+    </div>
+
+    <div class="box border-box">
+      <h4>Border</h4>
+      <p>Visible edge around padding</p>
+      <code>border: 6px solid red</code>
+    </div>
+
+    <div class="box padding-box">
+      <h4>Padding</h4>
+      <p>Space inside the border</p>
+      <code>padding: 32px 12px</code>
+    </div>
+
+  </div>
+
+  <div class="box content-box">
+    <h4>Content</h4>
+    <p>The actual text or media</p>
+    <code>width: 100%</code>
+  </div>
+
+  <p class="note">
+    Using <code>box-sizing: border-box</code> makes layout easier by including padding and border in width.
+  </p>
+
+</section>
+
+</body>
+</html>

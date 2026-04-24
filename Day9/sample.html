@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>My Portfolio</title>
+
+<style>
+* {
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial, sans-serif;
+}
+
+body {
+  background:#f4f6f9;
+  color:#333;
+}
+
+/* HEADER */
+header {
+  background:#111827;
+  color:white;
+  display:flex;
+  justify-content:space-between;
+  padding:15px 30px;
+  position:sticky;
+  top:0;
+}
+
+nav a {
+  color:#d1d5db;
+  margin-left:20px;
+  text-decoration:none;
+}
+
+nav a:hover {
+  color:white;
+}
+
+/* HERO */
+.hero {
+  background:linear-gradient(to right,#3b82f6,#06b6d4);
+  color:white;
+  text-align:center;
+  padding:100px 20px;
+}
+
+.hero h1 {
+  font-size:40px;
+}
+
+/* SECTIONS */
+section {
+  padding:60px 20px;
+  text-align:center;
+}
+
+/* ABOUT */
+.about {
+  max-width:700px;
+  margin:auto;
+}
+
+/* SKILLS */
+.skills {
+  display:flex;
+  justify-content:center;
+  gap:20px;
+  flex-wrap:wrap;
+}
+
+.skill {
+  background:white;
+  padding:15px;
+  border-radius:10px;
+  box-shadow:0 5px 10px rgba(0,0,0,0.1);
+}
+
+/* PROJECTS */
+.projects {
+  display:flex;
+  justify-content:center;
+  gap:20px;
+  flex-wrap:wrap;
+}
+
+.card {
+  background:white;
+  width:250px;
+  border-radius:10px;
+  overflow:hidden;
+  box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+
+.card img {
+  width:100%;
+}
+
+.card h3 {
+  margin:10px 0;
+}
+
+.card p {
+  padding:0 10px 10px;
+}
+
+/* APPS */
+input {
+  padding:10px;
+  margin:5px;
+}
+
+button {
+  padding:10px 15px;
+  background:#3b82f6;
+  color:white;
+  border:none;
+  cursor:pointer;
+}
+
+ul {
+  list-style:none;
+}
+
+li {
+  background:white;
+  margin:5px auto;
+  padding:10px;
+  width:200px;
+  cursor:pointer;
+}
+
+/* CONTACT */
+.contact input, .contact textarea {
+  display:block;
+  margin:10px auto;
+  width:250px;
+  padding:10px;
+}
+
+/* FOOTER */
+footer {
+  background:#111827;
+  color:white;
+  padding:15px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h2>My Portfolio</h2>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#todo">To-Do</a>
+    <a href="#weather">Weather</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+  <h1>Hello, I'm a Web Developer</h1>
+  <p>I create websites using HTML, CSS & JavaScript</p>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <h2>About Me</h2>
+  <p class="about">
+    I am a beginner web developer learning frontend development.
+    I enjoy building simple and clean websites and improving my skills.
+  </p>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <h2>My Skills</h2>
+  <div class="skills">
+    <div class="skill">HTML</div>
+    <div class="skill">CSS</div>
+    <div class="skill">JavaScript</div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <h2>Projects</h2>
+  <div class="projects">
+
+    <div class="card">
+      <img src="https://via.placeholder.com/300">
+      <h3>Portfolio</h3>
+      <p>My personal website</p>
+    </div>
+
+    <div class="card">
+      <img src="https://via.placeholder.com/300">
+      <h3>Landing Page</h3>
+      <p>Modern UI design</p>
+    </div>
+
+    <div class="card">
+      <img src="https://via.placeholder.com/300">
+      <h3>Mini Apps</h3>
+      <p>To-Do & Weather apps</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- TODO -->
+<section id="todo">
+  <h2>To-Do App</h2>
+  <input id="task" placeholder="Enter task">
+  <button onclick="addTask()">Add</button>
+  <ul id="list"></ul>
+</section>
+
+<!-- WEATHER -->
+<section id="weather">
+  <h2>Weather App</h2>
+  <input id="city" placeholder="Enter city">
+  <button onclick="getWeather()">Search</button>
+  <p id="result"></p>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact">
+  <h2>Contact Me</h2>
+  <input placeholder="Your Name">
+  <input placeholder="Your Email">
+  <textarea placeholder="Message"></textarea>
+  <button>Send</button>
+</section>
+
+<footer>
+  <p>© 2026 My Portfolio</p>
+</footer>
+
+<script>
+function addTask() {
+  let task = document.getElementById("task").value;
+  if(task === "") return;
+
+  let li = document.createElement("li");
+  li.innerText = task;
+
+  li.onclick = function() {
+    li.remove();
+  }
+
+  document.getElementById("list").appendChild(li);
+}
+
+async function getWeather() {
+  let city = document.getElementById("city").value;
+
+  let res = await fetch(
+    `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=YOUR_API_KEY`
+  );
+
+  let data = await res.json();
+
+  document.getElementById("result").innerText =
+    "Temperature: " + data.main.temp;
+}
+</script>
+
+</body>
+</html>

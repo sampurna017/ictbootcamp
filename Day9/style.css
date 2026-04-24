@@ -1,0 +1,123 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Body */
+  body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background: #f4f4f4;
+  }
+  
+  /* Navbar */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 30px;
+    background: #1c1f3a;
+    color: white;
+  }
+  
+  .navbar a {
+    color: white;
+    margin-left: 15px;
+    text-decoration: none;
+  }
+  
+  /* Hero */
+  .hero {
+    text-align: center;
+    padding: 80px 20px;
+    background: #2c2f5a;
+    color: white;
+  }
+  
+  .hero h1 {
+    font-size: 40px;
+  }
+  
+  .btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background: #c0392b;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+  }
+  
+  /* Sections */
+  .container {
+    padding: 40px 20px;
+    max-width: 900px;
+    margin: auto;
+  }
+  
+  /* Grid */
+  .grid {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  
+  .card {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    flex: 1;
+    min-width: 250px;
+  }
+  
+  .card img {
+    width: 100%;
+    border-radius: 5px;
+  }
+  
+  /* Table */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+  }
+  
+  th {
+    background: #1c1f3a;
+    color: white;
+    padding: 10px;
+  }
+  
+  td {
+    padding: 10px;
+    border: 1px solid #ddd;
+  }
+  
+  /* Form */
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  input, textarea {
+    margin-top: 10px;
+    padding: 10px;
+  }
+  
+  button {
+    margin-top: 10px;
+    padding: 10px;
+    background: #c0392b;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  /* Footer */
+  footer {
+    text-align: center;
+    padding: 20px;
+    background: #1c1f3a;
+    color: white;
+  }

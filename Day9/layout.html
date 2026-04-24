@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        .container {
+            display: grid;background-color: blue;
+            grid-template-areas:
+            "header header"
+            "link content" 
+            "footer footer";
+            gap: 3px;
+            padding: 5px;
+        }
+        .container div {
+            background-color: whitesmoke; 
+            padding: auto;
+          
+
+        }
+        .container div.header {
+         grid-area: header;
+         text-align: center;
+         
+            
+        }
+        .container div.link {
+            grid-area: link;
+            
+        }
+        .container div.content{
+            grid-area:content;
+        }
+        .container div.footer{
+            grid-area: footer;
+            text-align: center;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>CSS Grid layout</h1>
+    <p>The Grid layout module offers a grid-based layout system, with row and coloumns.</p>
+    <p>The Grid layout module make it easy to design complex and responsive web pages without using floats and positiong. </p>
+    <div class="container">
+        <div class="header">MY Header</div>
+        <div  class="link"><a href="https://www.google.com">Link 1</a>
+              <a href="https://www.facebook.com">Link 2</a>
+            <a href="https://www.youtube.com">link 3</a></div>
+        <div class="content">Lorium Ipsum
+            <p>This paragraph</p>
+        </div>
+        <div class="footer">Footer</div>
+    </div>
+    
+</body>
+</html>
