@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>RPS</h1>
+    <button onclick="play('rock')">Rock</button>
+    <button onclick="play('paper')">Paper</button>
+    <button onclick="play('scissors')">Scissors</button>
+    <h3 id="user"></h3>
+    <h3 id="b"></h3>
+    <h3 id="result"></h3>
+    <script>
+        function play(choice){
+        var a = choice;
+        var result;
+        var option = ['rock','paper','scissors'];
+        var b = option[Math.floor(Math.random()*3)];
+        if (a==b) 
+        {
+            result='draw';
+        }
+        else if (
+            (a=='rock' && b=='scissors')||
+            (a=='paper' && b=='rock')||
+            (a=='scissors' && b=='paper')
+            
+        ){result='win';}
+        else { result='loose';}
+        document.getElementById('user').innerHTML='you:'+a;
+        document.getElementById('b').innerHTML='computer: '+b;
+        document.getElementById('result').innerHTML='result: '+result;
+        
+        }  
+    </script>
+</body>
+</html>
