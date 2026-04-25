@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Unbelievable Calculator</title>
+
+<style>
+:root{
+ --bg:#0b1020; --card:#111827cc; --text:#fff; --accent:#22c55e;
+}
+.light{--bg:#f3f4f6; --card:#fff; --text:#111;}
+body{
+ margin:0; font-family:system-ui;
+ background:var(--bg); color:var(--text);
+ display:flex; justify-content:center; align-items:center;
+ height:100vh;
+}
+.app{width:380px;}
+.card{
+ background:var(--card);
+ backdrop-filter:blur(15px);
+ padding:12px;
+ border-radius:18px;
+}
+.hidden{display:none;}
+button{padding:8px;border:none;border-radius:8px;margin:2px;}
+input{width:100%;padding:8px;margin:5px 0;border-radius:8px;border:none;}
+.grid{display:grid;grid-template-columns:repeat(5,1fr);gap:5px;}
+canvas{width:100%;height:200px;background:black;border-radius:10px;}
+.equal{background:var(--accent);}
+</style>
+</head>
+
+<body>
+
+<div class="app">
+
+<!-- Tabs -->
+<div>
+<button onclick="tab('calc')">Calc</button>
+<button onclick="tab('graph')">Graph</button>
+<button onclick="tab('solve')">Solve</button>
+<button onclick="tab('stats')">Stats</button>
+</div>
+
+<!-- CALCULATOR -->
+<div id="calc" class="card">
+<input id="display">
+
+<div class="grid">
+<button onclick="append('(')">(</button>
+<button onclick="append(')')">)</button>
+<button onclick="clearAll()">AC</button>
+<button onclick="del()">DEL</button>
+<button onclick="append('/')">÷</button>
+
+<button onclick="append('7')">7</button>
+<button onclick="append('8')">8</button>
+<button onclick="append('9')">9</button>
+<button onclick="append('*')">×</button>
+<button onclick="append('^')">^</button>
+
+<button onclick="append('4')">4</button>
+<button onclick="append('5')">5</button>
+<button onclick="append('6')">6</button>
+<button onclick="append('-')">-</button>
+<button onclick="append('sqrt(')">√</button>
+
+<button onclick="append('1')">1</button>
+<button onclick="append('2')">2</button>
+<button onclick="append('3')">3</button>
+<button onclick="append('+')">+</button>
+<button onclick="append('log(')">log</button>
+
+<button onclick="append('0')">0</button>
+<button onclick="append('.')">.</button>
+<button onclick="append('sin(')">sin</button>
+<button onclick="append('cos(')">cos</button>
+<button onclick="append('tan(')">tan</button>
+
+<button onclick="append('pi')">π</button>
+<button onclick="append('e')">e</button>
+<button onclick="append('fact(')">n!</button>
+<button onclick="calculate()" class="equal">=</button>
+</div>
+
+<button onclick="toggleTheme()">🌗</button>
+<button onclick="voice()">🎤</button>
+
+<div id="history"></div>
+</div>
+
+<!-- GRAPH -->
+<div id="graph" class="card hidden">
+<input id="func" placeholder="Example: x*x, sin(x)">
+<button onclick="plot()">Plot</button>
+<canvas id="canvas"></canvas>
+</div>
+
+<!-- SOLVER -->
+<div id="solve" class="card hidden">
+<input id="equation" placeholder="Example: x*x-4=0">
+<button onclick="solve()">Solve</button>
+<div id="solution"></div>
+</div>
+
+<!-- STATS -->
+<div id="stats" class="card hidden">
+<input id="data" placeholder="1,2,3,4">
+<button onclick="calcStats()">Calculate</button>
+<div id="statsRes"></div>
+</div>
+
+</div>
+
+<script>
+let display=document.getElementById("display");
+let historyDiv=document.getElementById("history");
+
+// Tabs
+function tab(id){
+ document.querySelectorAll('.card').forEach(x=>x.classList.add('hidden'));
+ document.getElementById(id).classList.remove('hidden');
+}
+
+// Append
+function append(v){display.value+=v;}
+function clearAll(){display.value="";}
+function del(){display.value=display.value.slice(0,-1);}
+
+// Factorial
+function fact(n){return n<=1?1:n*fact(n-1);}
+
+// Parser
+function parse(expr){
+ return expr.replace(/pi/g,Math.PI)
+ .replace(/e/g,Math.E)
+ .replace(/sqrt/g,"Math.sqrt")
+ .replace(/log/g,"Math.log10")
+ .replace(/\^/g,"**")
+ .replace(/sin/g,"Math.sin")
+ .replace(/cos/g,"Math.cos")
+ .replace(/tan/g,"Math.tan");
+}
+
+// Calculate
+function calculate(){
+ try{
+  let exp=parse(display.value);
+  let res=Function("fact","return "+exp)(fact);
+  historyDiv.innerHTML="<div>"+display.value+"="+res+"</div>"+historyDiv.innerHTML;
+  localStorage.setItem("h",historyDiv.innerHTML);
+  display.value=res;
+ }catch{display.value="Error";}
+}
+
+// Load history
+window.onload=()=>{historyDiv.innerHTML=localStorage.getItem("h")||""}
+
+// Graph
+function plot(){
+ let ctx=document.getElementById("canvas").getContext("2d");
+ ctx.clearRect(0,0,300,200);
+ let funcs=document.getElementById("func").value.split(",");
+ funcs.forEach(f=>{
+  ctx.beginPath();
+  for(let x=-10;x<10;x+=0.1){
+   let y;
+   try{y=Function("x","return "+parse(f))(x);}catch{y=0;}
+   let px=(x+10)*15;
+   let py=100-y*10;
+   if(x==-10) ctx.moveTo(px,py);
+   else ctx.lineTo(px,py);
+  }
+  ctx.strokeStyle="#"+Math.random().toString(16).slice(-6);
+  ctx.stroke();
+ });
+}
+
+// Solve (numeric root)
+function solve(){
+ let eq=document.getElementById("equation").value;
+ let f=eq.replace("=0","");
+ let func=x=>Function("x","return "+parse(f))(x);
+ let x=1;
+ for(let i=0;i<20;i++){
+  x=x-(func(x)/( (func(x+0.001)-func(x))/0.001 ));
+ }
+ document.getElementById("solution").innerText="x ≈ "+x.toFixed(4);
+}
+
+// Stats
+function calcStats(){
+ let arr=document.getElementById("data").value.split(",").map(Number);
+ let mean=arr.reduce((a,b)=>a+b,0)/arr.length;
+ let sorted=[...arr].sort((a,b)=>a-b);
+ let median=sorted[Math.floor(arr.length/2)];
+ let sd=Math.sqrt(arr.reduce((s,x)=>s+(x-mean)**2,0)/arr.length);
+ document.getElementById("statsRes").innerText=
+ "Mean:"+mean+" Median:"+median+" SD:"+sd.toFixed(2);
+}
+
+// Theme
+function toggleTheme(){document.body.classList.toggle("light");}
+
+// Voice
+function voice(){
+ let r=new (window.SpeechRecognition||webkitSpeechRecognition)();
+ r.onresult=e=>{
+  display.value+=e.results[0][0].transcript
+  .replace(/plus/g,'+')
+  .replace(/minus/g,'-')
+  .replace(/times/g,'*')
+  .replace(/divide/g,'/');
+ };
+ r.start();
+}
+</script>
+
+</body>
+</html>

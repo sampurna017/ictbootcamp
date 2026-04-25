@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        :root{
+         --bg:#0b1020; --card:#111827cc; --text:#fff; --accent:#000000e7;
+          }
+         .light{--bg:#f3f4f6; --card:#fff; --text:#111;}
+          body{
+           background:var(--bg); color:var(--text);
+            
+            }
+         .app{width:380px;}
+         div{ display:flex; justify-content:center; align-items:center; margin:0; font-family:system-ui;
+           height:25vh;}
+        h1{ text-align: center;}
+        button{
+            background-color: rgb(0, 0, 0);
+            font-size: 1.7rem;
+            border-radius: 9px;
+            padding:5px;
+            margin: 5px;
+            gap:5px;
+            text-align: center;
+            align-items: center;
+            color: whitesmoke;
+        }
+    
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>RPS</h1>
+    <div>
+    <button onclick="
+    user='rock'
+    computer=options[Math.floor(math.random()*3)]
+    if (user==computer)
+    {
+        resul='draw';
+    }
+    else if(computer=='paper')
+    {result='you loose ';}
+    else(computer=='scissors')
+    {result='you win ';}
+    document.getElementById(user).innerHTML='you: '+user;
+    document.getElementById(computer).innerHTML='computer: '+computer;
+    document.getElementById(result).innerHTML='result: '+result;">rock</button>
+    <button onclick="
+    user='paper'
+    computer=options[math.floor(math.random()*3)]
+    if (user==computer)
+    {
+        resul='draw';
+    }
+    else if(computer=='scissors')
+    {result='you loose ';}
+    else(computer=='rock')
+    {result='you win ';}
+    document.getElementById(user).innerHTML='you: '+user;
+    document.getElementById(computer).innerHTML='computer: '+computer;
+    document.getElementById(result).innerHTML='result: '+result;
+
+    ">paper</button>
+    <button onclick="
+    user='scissors'
+    computer=options[math.floor(math.random()*3)]
+    if (user==computer)
+    {
+        resul='draw';
+    }
+    else if(computer=='paper')
+    {result='you win ';}
+    else(computer=='rock')
+    {result='you loose';}
+    document.getElementById(user).innerHTML='you: '+user;
+    document.getElementById(computer).innerHTML='computer: '+computer;
+    document.getElementById(result).innerHTML='result: '+result;
+
+    ">scissors</button></div>
+    <h2 id="user"></h2>
+    <h2 id="computer"></h2>
+    <h2 id="result"></h2>
+    <script>
+        var options; ['rock' , 'paper' , 'scissors']
+        var user;
+        var computer;
+        var result;
+    </script>
+</body>
+</html>

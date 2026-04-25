@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calc</title>
+</head>
+<body>
+    <h1>calculator</h1>
+    <input type="number" id="1">
+    <input type="number" id="2">
+    <button onclick="
+    let x =parseFloat(document.getElementById('1').value);
+    let y =parseFloat(document.getElementById('2').value);
+    document.getElementById('3').innerHTML=x+y;
+    ">+</button>
+    <button onclick="
+    let x =parseFloat(document.getElementById('1').value);
+    let y =parseFloat(document.getElementById('2').value);
+    document.getElementById('3').innerHTML=x-y;
+    ">-</button>
+    <button onclick="
+    let x =parseFloat(document.getElementById('1').value);
+    let y =parseFloat(document.getElementById('2').value);
+    document.getElementById('3').innerHTML=x*y;
+    ">*</button>
+    <button onclick="
+    let x =parseFloat(document.getElementById('1').value);
+    let y =parseFloat(document.getElementById('2').value);
+    if (y==0){
+        document.getElementById('3').innerHTML=x/y
+    };"
+    >/</button>
+    <h3>Result:</h3>
+     <h2 id="3"></h2>
+</body>
+</html>
